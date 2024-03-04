@@ -82,12 +82,9 @@ class _SearchScreenState extends State<SearchScreen> {
                                 String title = value[index]['title'] ??
                                     value[index]['name'];
                                 late String? url;
-                                if (value[index]["poster_path"] != null) {
-                                  url = value[index]["poster_path"];
-                                } else {
-                                  url = value[index]["backdrop_path"];
-                                }
-
+                                value[index]["poster_path"] != null
+                                ?  url = value[index]["poster_path"]
+                                : url = value[index]["backdrop_path"];
                                 String urls = url != null
                                     ? imageUrl + url
                                     : "https://yt3.googleusercontent.com/-i9vS-g8mUx5IL0tsprB9mLW4DMYzODoLdehGvjZBYzzHL42QAqHO_DQ7c6ieKY8z81JPl6f74E=s900-c-k-c0x00ffffff-no-rj";
