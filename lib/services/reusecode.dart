@@ -27,7 +27,7 @@ class Profile extends StatelessWidget {
           ],
         ),
        const SizedBox(height: 12,),
-        Text(name)
+        Text(name,style: TextStyle(color: Colors.white),)
       ],
     );
   }

@@ -41,6 +41,7 @@ class _HomecontentState extends State<Homecontent> {
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: const Color.fromARGB(115, 104, 103, 103),
         currentIndex: _currentIndex,
         onTap: (index) {
           setState(() {
@@ -54,6 +55,7 @@ class _HomecontentState extends State<Homecontent> {
        unselectedLabelStyle:const TextStyle(color: Colors.white),
         items: const [
           BottomNavigationBarItem(
+              backgroundColor: const Color.fromARGB(115, 104, 103, 103),
             icon: Icon(
               Icons.home,
               color: Colors.white,
@@ -61,6 +63,7 @@ class _HomecontentState extends State<Homecontent> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
+             backgroundColor: const Color.fromARGB(115, 104, 103, 103),
             icon: Icon(
               Icons.search,
               color: Colors.white,
@@ -68,6 +71,7 @@ class _HomecontentState extends State<Homecontent> {
             label: 'Search',
           ),
           BottomNavigationBarItem(
+             backgroundColor: const Color.fromARGB(115, 104, 103, 103),
             icon: Icon(
               Icons.whatshot,
               color: Colors.white,
@@ -76,6 +80,7 @@ class _HomecontentState extends State<Homecontent> {
             
           ),
           BottomNavigationBarItem(
+             backgroundColor: const Color.fromARGB(115, 104, 103, 103),
             icon: Icon(
               Icons.account_circle_outlined,
               color: Colors.white,

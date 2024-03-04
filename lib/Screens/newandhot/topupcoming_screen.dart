@@ -45,7 +45,7 @@ class ComingsoonScreen extends StatelessWidget {
                          const  SizedBox(height: 10,),
                           Padding(
                             padding: const EdgeInsets.only(right: 180),
-                            child: Text(valueNotifier.value[index]['title'],style:const TextStyle(fontWeight: FontWeight.w600,fontSize: 28,),),
+                            child: Text(valueNotifier.value[index]['title'],style:const TextStyle(fontWeight: FontWeight.w600,fontSize: 28,color: Colors.white),),
                           ),
                           const  SizedBox(height: 5,),
                           Padding(
@@ -53,15 +53,15 @@ class ComingsoonScreen extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text('Language : ${valueNotifier.value[index]['original_language']}',),
-                                 Text('Released Date : ${valueNotifier.value[index]['release_date']}')
+                                Text('Language : ${valueNotifier.value[index]['original_language']}',style: TextStyle(color: Colors.white),),
+                                 Text('Released Date : ${valueNotifier.value[index]['release_date']}',style: TextStyle(color: Colors.white))
                               ],
                             ),
                           ),
                           const  SizedBox(height: 5,),
                           Padding(
                             padding: const EdgeInsets.all(4.0),
-                            child: Text(valueNotifier.value[index]['overview'] ,maxLines: 2,style:const TextStyle(overflow: TextOverflow.ellipsis),),
+                            child: Text(valueNotifier.value[index]['overview'] ,maxLines: 2,style:const TextStyle(overflow: TextOverflow.ellipsis,color: Colors.white),),
                           ),
                         const  SizedBox(height: 25,),
                           Padding(

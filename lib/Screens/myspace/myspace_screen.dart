@@ -27,8 +27,8 @@ class Myspace extends StatelessWidget {
                                       ),
                                       const Row(
                                         children: [
-                                          Icon(Icons.settings),
-                                          Text('Help & Settings'),
+                                          Icon(Icons.settings,color: Colors.white,),
+                                          Text('Help & Settings',style: TextStyle(color: Colors.white),),
                                         ],
                                       )
                                     ],
@@ -37,18 +37,18 @@ class Myspace extends StatelessWidget {
                                     children: [
                                       const Column(
                                         children: [
-                                          Text('Subscribee to enjoy Disney +  ',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w300),),
+                                          Text('Subscribee to enjoy Disney +  ',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w300,color: Colors.white),),
                                           Padding(
                                             padding: EdgeInsets.only(right: 180),
-                                            child: Text('Hotstar',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w300),),
+                                            child: Text('Hotstar',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w300,color: Colors.white),),
                                           )
                                         ],
                                       ),
                                       
                                       Column(
                                         children: [
-                                          ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(backgroundColor:const Color.fromARGB(255, 13, 52, 252)), child: const Text('Subscribe',style: TextStyle(fontSize: 16),),),
-                                         const Text('Plan starts at ₹149'),
+                                          ElevatedButton(onPressed: (){},style: ElevatedButton.styleFrom(backgroundColor:const Color.fromARGB(255, 13, 52, 252)), child: const Text('Subscribe',style: TextStyle(fontSize: 16,color: Colors.white),),),
+                                         const Text('Plan starts at ₹149',style: TextStyle(color: Colors.white),),
                                         ],
                                       ),
                                     ],
@@ -60,14 +60,14 @@ class Myspace extends StatelessWidget {
                                         mainAxisAlignment: MainAxisAlignment.spaceAround,
       
                                     children: [
-                                      Text('Profiles',style: TextStyle(fontSize: 23,fontWeight: FontWeight.w500),),
+                                      Text('Profiles',style: TextStyle(fontSize: 23,fontWeight: FontWeight.w500,color: Colors.white),),
                                       SizedBox(width: 60,),
                                       Row(
                                         children: [
                                           Icon(Icons.edit,color: Colors.white,
                                           ),
                                           
-                                          Text('Edit',style: TextStyle(fontSize: 18),),
+                                          Text('Edit',style: TextStyle(fontSize: 18,color: Colors.white,),),
                                         ],
                                       )
                                     ],

@@ -39,6 +39,11 @@ class _SearchScreenState extends State<SearchScreen> {
                 prefixIcon: const Icon(Icons.search,color: Colors.black,),
               ),
             ), 
+            SizedBox(height: 20,),
+            Padding(
+              padding: const EdgeInsets.only(right: 200),
+              child: Text('People Search For',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20),),
+            ),
              Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(

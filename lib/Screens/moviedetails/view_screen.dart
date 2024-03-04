@@ -37,7 +37,7 @@ class ViewScreen extends StatelessWidget {
                     right: 14,
                     child: IconButton(
                       onPressed: () => Navigator.pop(context),
-                      icon: const Icon(Icons.cancel, color: Colors.black),
+                      icon: const Icon(Icons.cancel, color: Colors.white),
                     ),
                   ),
                 ],
@@ -45,18 +45,18 @@ class ViewScreen extends StatelessWidget {
             ),
             Text(
               valueNotifier.value[index]['title'] ?? valueNotifier.value[index]['name'],
-              style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 40, fontWeight: FontWeight.bold, color: Colors.white,),
             ),
             const SizedBox(height: 10),
             Column(
               children: [
                 Text(
-                    'Released Date :   ${valueNotifier.value[index]['release_date'] ?? 'Released Soon'}'),
+                    'Released Date :   ${valueNotifier.value[index]['release_date'] ?? 'Released Soon'}',style: TextStyle(color: Colors.white)),
                 const SizedBox(
                   height: 10,
                 ),
                 Text(
-                    'LanguageS :  ${valueNotifier.value[index]['original_language'] ?? 'Released Soon'}  | HINDI | TAMIL | MALAYALAM'),
+                    'LanguageS :  ${valueNotifier.value[index]['original_language'] ?? 'Released Soon'}  | HINDI | TAMIL | MALAYALAM',style: TextStyle(color: Colors.white),),
               ],
             ),
             Padding(
@@ -90,6 +90,7 @@ class ViewScreen extends StatelessWidget {
             const Text(
               '| ACTION | DRAMA | THRILLER | FRIENDSHIP |',
               overflow: TextOverflow.ellipsis,
+              style: TextStyle(color: Colors.white),
             ),
             const SizedBox(
               height: 10,
@@ -99,7 +100,7 @@ class ViewScreen extends StatelessWidget {
               child: Text(valueNotifier.value[index]['overview']?? 'Details will not be provided',
                   style: const TextStyle(color: Colors.white54),
                   maxLines: 3,
-                  overflow: TextOverflow.ellipsis),
+                  overflow: TextOverflow.ellipsis,),
             ),
             const SizedBox(
               height: 10,
@@ -112,8 +113,9 @@ class ViewScreen extends StatelessWidget {
                     Icon(
                       Icons.add,
                       size: 30,
+                      color: Colors.white
                     ),
-                    Text('Watchlist'),
+                    Text('Watchlist',style: TextStyle(color: Colors.white),),
                   ],
                 ),
                 Column(
@@ -121,8 +123,9 @@ class ViewScreen extends StatelessWidget {
                     Icon(
                       Icons.share,
                       size: 30,
+                      color: Colors.white
                     ),
-                    Text('Share'),
+                    Text('Share',style: TextStyle(color: Colors.white)),
                   ],
                 ),
                 Column(
@@ -130,8 +133,9 @@ class ViewScreen extends StatelessWidget {
                     Icon(
                       Icons.download_sharp,
                       size: 30,
+                      color: Colors.white
                     ),
-                    Text('Download'),
+                    Text('Download',style: TextStyle(color: Colors.white)),
                   ],
                 )
               ],
@@ -143,7 +147,7 @@ class ViewScreen extends StatelessWidget {
               padding: EdgeInsets.only(right: 200),
               child: Text(
                 'More Like This',
-                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 23),
+                style: TextStyle(fontWeight: FontWeight.normal, fontSize: 23,color: Colors.white),
               ),
             ),
             MovieScreen(
