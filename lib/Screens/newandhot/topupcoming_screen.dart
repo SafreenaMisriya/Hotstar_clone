@@ -21,7 +21,7 @@ class ComingsoonScreen extends StatelessWidget {
         future: futurefunction,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child:  CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           } else if (snapshot.hasError) {
             return Text('error: ${snapshot.error}');
           } else {
@@ -42,50 +42,85 @@ class ComingsoonScreen extends StatelessWidget {
                       ),
                       Column(
                         children: [
-                         const  SizedBox(height: 10,),
+                          const SizedBox(
+                            height: 10,
+                          ),
                           Padding(
                             padding: const EdgeInsets.only(right: 180),
-                            child: Text(valueNotifier.value[index]['title'],style:const TextStyle(fontWeight: FontWeight.w600,fontSize: 28,color: Colors.white),),
+                            child: Text(
+                              valueNotifier.value[index]['title'],
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 28,
+                                  color: Colors.white),
+                            ),
                           ),
-                          const  SizedBox(height: 5,),
+                          const SizedBox(
+                            height: 5,
+                          ),
                           Padding(
                             padding: const EdgeInsets.all(6.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text('Language : ${valueNotifier.value[index]['original_language']}',style: TextStyle(color: Colors.white),),
-                                 Text('Released Date : ${valueNotifier.value[index]['release_date']}',style: TextStyle(color: Colors.white))
+                                Text(
+                                  'Language : ${valueNotifier.value[index]['original_language']}',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                Text(
+                                    'Released Date : ${valueNotifier.value[index]['release_date']}',
+                                    style: TextStyle(color: Colors.white))
                               ],
                             ),
                           ),
-                          const  SizedBox(height: 5,),
+                          const SizedBox(
+                            height: 5,
+                          ),
                           Padding(
                             padding: const EdgeInsets.all(4.0),
-                            child: Text(valueNotifier.value[index]['overview'] ,maxLines: 2,style:const TextStyle(overflow: TextOverflow.ellipsis,color: Colors.white),),
+                            child: Text(
+                              valueNotifier.value[index]['overview'],
+                              maxLines: 2,
+                              style: const TextStyle(
+                                  overflow: TextOverflow.ellipsis,
+                                  color: Colors.white),
+                            ),
                           ),
-                        const  SizedBox(height: 25,),
+                          const SizedBox(
+                            height: 25,
+                          ),
                           Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Container(
                               height: 40,
                               decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.white
-                              ),
-                              child:const Row(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Colors.white),
+                              child: const Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(Icons.play_arrow_rounded,color: Colors.black,),
-                                  SizedBox(width: 7,),
-                                  Text('Watch Now',style: TextStyle(color: Colors.black,fontSize: 16,fontWeight:FontWeight.w400 ),),
+                                  Icon(
+                                    Icons.play_arrow_rounded,
+                                    color: Colors.black,
+                                  ),
+                                  SizedBox(
+                                    width: 7,
+                                  ),
+                                  Text(
+                                    'Watch Now',
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w400),
+                                  ),
                                 ],
                               ),
-                              
                             ),
                           ),
-                       const   SizedBox(height: 20,),
+                          const SizedBox(
+                            height: 20,
+                          ),
                         ],
-                        
                       )
                     ],
                   );

@@ -18,37 +18,51 @@ class _SearchScreenState extends State<SearchScreen> {
     return Scaffold(
       body: Column(
         children: [
-          const SizedBox(height: 30,),
-            TextFormField(
-               onChanged: (value) {
-                setState(() {
-                  isLoading.value=true;
-                  searchMovies(value);
-                });
-              },
-              cursorColor: Colors.black,
-              decoration: InputDecoration(
-                fillColor: Colors.white,
-                filled: true,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                hintText: 'Movies, Shows and more',
-                hintStyle: const TextStyle(color: Colors.black),
-                suffixIcon: const Icon(Icons.mic,color: Colors.black,),
-                prefixIcon: const Icon(Icons.search,color: Colors.black,),
+          const SizedBox(
+            height: 30,
+          ),
+          TextFormField(
+            onChanged: (value) {
+              setState(() {
+                isLoading.value = true;
+                searchMovies(value);
+              });
+            },
+            cursorColor: Colors.black,
+            decoration: InputDecoration(
+              fillColor: Colors.white,
+              filled: true,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
               ),
-            ), 
-            SizedBox(height: 20,),
-            Padding(
-              padding: const EdgeInsets.only(right: 200),
-              child: Text('People Search For',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20),),
+              hintText: 'Movies, Shows and more',
+              hintStyle: const TextStyle(color: Colors.black),
+              suffixIcon: const Icon(
+                Icons.mic,
+                color: Colors.black,
+              ),
+              prefixIcon: const Icon(
+                Icons.search,
+                color: Colors.black,
+              ),
             ),
-             Expanded(
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 200),
+            child: Text(
+              'People Search For',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20),
+            ),
+          ),
+          Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               child: ValueListenableBuilder(
                 valueListenable: searchMovie,
                 builder: (context, value, child) {
@@ -57,11 +71,13 @@ class _SearchScreenState extends State<SearchScreen> {
                           child: CircularProgressIndicator(),
                         )
                       : value.isEmpty
-                          ?  Expanded(
-                              child: GridViewScreen(valueNotifier: horrotmovies, futureFunction: loadhorror()),)
+                          ? Expanded(
+                              child: GridViewScreen(
+                                  valueNotifier: horrotmovies,
+                                  futureFunction: loadhorror()),
+                            )
                           : ListView.builder(
-                              itemCount:
-                                  searchMovie.value.length,
+                              itemCount: searchMovie.value.length,
                               itemBuilder: (context, index) {
                                 String title = value[index]['title'] ??
                                     value[index]['name'];
@@ -80,14 +96,14 @@ class _SearchScreenState extends State<SearchScreen> {
                                   height: 200,
                                   child: GestureDetector(
                                     onTap: () {
-                                      Navigator.of(context).push(MaterialPageRoute(
-                                          builder: (context) => ViewScreen(
-                                              valueNotifier:
-                                                  searchMovie,
-                                              index: index)));
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (context) => ViewScreen(
+                                                  valueNotifier: searchMovie,
+                                                  index: index)));
                                     },
-                                    child: SearchDisplay(
-                                        url: urls, title: title),
+                                    child:
+                                        SearchDisplay(url: urls, title: title),
                                   ),
                                 );
                               },

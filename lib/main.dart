@@ -16,11 +16,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.black,
       ),
       debugShowCheckedModeBanner: false,
-      home:const SplashScreen(),
-      );
-    
-    
+      home: const SplashScreen(),
+    );
   }
 }
-
-

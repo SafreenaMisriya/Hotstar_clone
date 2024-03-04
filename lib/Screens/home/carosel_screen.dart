@@ -55,7 +55,6 @@ class _CarsolSliderState extends State<CarsolSliderScreen> {
                 final imageUrl =
                     'https://image.tmdb.org/t/p/w500${widget.valueNotifier.value[index]}';
                 return buildImage(imageUrl, index);
-             
               },
               options: CarouselOptions(
                 autoPlay: true,
@@ -68,7 +67,6 @@ class _CarsolSliderState extends State<CarsolSliderScreen> {
         ],
       ),
     );
-    
   }
 
   Widget buildImage(String imageUrl, int index) {
@@ -80,8 +78,13 @@ class _CarsolSliderState extends State<CarsolSliderScreen> {
   }
 
   Widget builderIndicator() => AnimatedSmoothIndicator(
-        effect:const SwapEffect(activeDotColor: Colors.white,type: SwapType.yRotation,dotWidth: 6,dotHeight: 6,),
-        activeIndex: activeIndex, 
+        effect: const SwapEffect(
+          activeDotColor: Colors.white,
+          type: SwapType.yRotation,
+          dotWidth: 6,
+          dotHeight: 6,
+        ),
+        activeIndex: activeIndex,
         count: 6,
       );
 }

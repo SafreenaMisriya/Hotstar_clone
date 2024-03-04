@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 class SearchDisplay extends StatelessWidget {
-  const SearchDisplay({super.key,
-  required this.url,
-  required this.title,
+  const SearchDisplay({
+    super.key,
+    required this.url,
+    required this.title,
   });
-   final String url;
+  final String url;
   final String title;
 
   @override
@@ -14,12 +15,17 @@ class SearchDisplay extends StatelessWidget {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(10),
-         child:  SizedBox(width: 150,height: 150,child: Image(image:NetworkImage(url) ),),
-         
-
+          child: SizedBox(
+            width: 150,
+            height: 150,
+            child: Image(image: NetworkImage(url)),
+          ),
         ),
-        const SizedBox(width: 5,),
-        Expanded(child: Text(
+        const SizedBox(
+          width: 5,
+        ),
+        Expanded(
+            child: Text(
           title,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
@@ -29,8 +35,6 @@ class SearchDisplay extends StatelessWidget {
             fontSize: 15,
           ),
         )),
-
-        
       ],
     );
   }
