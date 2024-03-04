@@ -11,122 +11,159 @@ String accesstoken =
 String imageUrl = 'https://image.tmdb.org/t/p/w500';
 
 Future<void> loadlatestmovies() async {
-  final url =
-      'https://api.themoviedb.org/3/tv/popular?api_key=$apikey&language=en-US';
-  final uri = Uri.parse(url);
-  final response = await http.get(uri);
-  if (response.statusCode == 200) {
-    final body = response.body;
-    final items = jsonDecode(body);
-    popularshows.value = items["results"];
+  try {
+    final url =
+        'https://api.themoviedb.org/3/tv/popular?api_key=$apikey&language=en-US';
+    final uri = Uri.parse(url);
+    final response = await http.get(uri);
+    if (response.statusCode == 200) {
+      final body = response.body;
+      final items = jsonDecode(body);
+      popularshows.value = items["results"];
 
-    stdout.write(popularshows.value);
+      stdout.write(popularshows.value);
+    }
+  } catch (error) {
+    stdout.write('Error :$error');
   }
 }
 
 movieupcoming() async {
-  final url =
-      'https://api.themoviedb.org/3/movie/upcoming?api_key=$apikey&language=en-US&page=1';
-  final uri = Uri.parse(url);
-  final response = await http.get(uri);
-  if (response.statusCode == 200) {
-    final body = response.body;
-    final items = jsonDecode(body);
-    upcoming.value = items["results"];
-    stdout.write(upcoming.value);
+  try {
+    final url =
+        'https://api.themoviedb.org/3/movie/upcoming?api_key=$apikey&language=en-US&page=1';
+    final uri = Uri.parse(url);
+    final response = await http.get(uri);
+    if (response.statusCode == 200) {
+      final body = response.body;
+      final items = jsonDecode(body);
+      upcoming.value = items["results"];
+      stdout.write(upcoming.value);
+    }
+  } catch (error) {
+    stdout.write('Error :$error');
   }
 }
 
 loadtoprated() async {
-  final url =
-      'https://api.themoviedb.org/3/movie/top_rated?api_key=$apikey&language=en-US&page=1';
-  final uri = Uri.parse(url);
-  final response = await http.get(uri);
-  if (response.statusCode == 200) {
-    final body = response.body;
-    final items = jsonDecode(body);
-    toprated.value = items["results"];
-    stdout.write(toprated.value);
+  try {
+    final url =
+        'https://api.themoviedb.org/3/movie/top_rated?api_key=$apikey&language=en-US&page=1';
+    final uri = Uri.parse(url);
+    final response = await http.get(uri);
+    if (response.statusCode == 200) {
+      final body = response.body;
+      final items = jsonDecode(body);
+      toprated.value = items["results"];
+      stdout.write(toprated.value);
+    }
+  } catch (error) {
+    stdout.write('Error :$error');
   }
 }
 
 loadlatest() async {
-  final url =
-      'https://api.themoviedb.org/3/movie/upcoming?api_key=$apikey&language=en-US&page=1';
-  final uri = Uri.parse(url);
-  final response = await http.get(uri);
-  if (response.statusCode == 200) {
-    final body = response.body;
-    final items = jsonDecode(body);
-    latestrelease.value = items["results"];
-    stdout.write(latestrelease.value);
+  try {
+    final url =
+        'https://api.themoviedb.org/3/movie/upcoming?api_key=$apikey&language=en-US&page=1';
+    final uri = Uri.parse(url);
+    final response = await http.get(uri);
+    if (response.statusCode == 200) {
+      final body = response.body;
+      final items = jsonDecode(body);
+      latestrelease.value = items["results"];
+      stdout.write(latestrelease.value);
+    }
+  } catch (error) {
+    stdout.write('Error :$error');
   }
 }
 
 loadcrimemovies() async {
-  final url =
-      'https://api.themoviedb.org/3/discover/movie?api_key=$apikey&with_genres=80&sort_by=popularity.desc&vote_count.gte=1000&page=1';
-  final uri = Uri.parse(url);
-  final response = await http.get(uri);
-  if (response.statusCode == 200) {
-    final body = response.body;
-    final items = jsonDecode(body);
-    crimemovie.value = items["results"];
-    stdout.write(crimemovie.value);
+  try {
+    final url =
+        'https://api.themoviedb.org/3/discover/movie?api_key=$apikey&with_genres=80&sort_by=popularity.desc&vote_count.gte=1000&page=1';
+    final uri = Uri.parse(url);
+    final response = await http.get(uri);
+    if (response.statusCode == 200) {
+      final body = response.body;
+      final items = jsonDecode(body);
+      crimemovie.value = items["results"];
+      stdout.write(crimemovie.value);
+    }
+  } catch (error) {
+    stdout.write('Error :$error');
   }
 }
 
 loadromantic() async {
-  final url =
-      'https://api.themoviedb.org/3/movie/top_rated?api_key=$apikey&language=en-US';
-  final uri = Uri.parse(url);
-  final response = await http.get(uri);
-  if (response.statusCode == 200) {
-    final body = response.body;
-    final items = jsonDecode(body);
-    romanticmovie.value = items["results"];
-    stdout.write(romanticmovie.value);
+  try {
+    final url =
+        'https://api.themoviedb.org/3/movie/top_rated?api_key=$apikey&language=en-US';
+    final uri = Uri.parse(url);
+    final response = await http.get(uri);
+    if (response.statusCode == 200) {
+      final body = response.body;
+      final items = jsonDecode(body);
+      romanticmovie.value = items["results"];
+      stdout.write(romanticmovie.value);
+    }
+  } catch (error) {
+    stdout.write('Error :$error');
   }
 }
 
 loadhorror() async {
-  final url =
-      'https://api.themoviedb.org/3/trending/movie/week?api_key=$apikey&language=en-US&page=1';
-  final uri = Uri.parse(url);
-  final response = await http.get(uri);
-  if (response.statusCode == 200) {
-    final body = response.body;
-    final items = jsonDecode(body);
-    horrotmovies.value = items["results"];
-    stdout.write(horrotmovies.value);
+  try {
+    final url =
+        'https://api.themoviedb.org/3/trending/movie/week?api_key=$apikey&language=en-US&page=1';
+    final uri = Uri.parse(url);
+    final response = await http.get(uri);
+    if (response.statusCode == 200) {
+      final body = response.body;
+      final items = jsonDecode(body);
+      horrotmovies.value = items["results"];
+      stdout.write(horrotmovies.value);
+    }
+  } catch (error) {
+    stdout.write('Error :$error');
   }
 }
 
 newlease() async {
-  final url = 'https://api.themoviedb.org/3/movie/now_playing?api_key=$apikey';
-  final uri = Uri.parse(url);
-  final response = await http.get(uri);
-  if (response.statusCode == 200) {
-    final body = response.body;
-    final items = jsonDecode(body);
-    newmovie.value = items["results"];
-    stdout.write(newmovie.value);
+  try {
+    final url =
+        'https://api.themoviedb.org/3/movie/now_playing?api_key=$apikey';
+    final uri = Uri.parse(url);
+    final response = await http.get(uri);
+    if (response.statusCode == 200) {
+      final body = response.body;
+      final items = jsonDecode(body);
+      newmovie.value = items["results"];
+      stdout.write(newmovie.value);
+    }
+  } catch (error) {
+    stdout.write('Error :$error');
   }
 }
 
 searchMovies(String query) async {
-  isLoading.value = true;
-  searchMovie.value.clear();
-  final url =
-      "https://api.themoviedb.org/3/search/multi?query=$query&api_key=$apikey&include_adult=false&language=en-US";
-  final uri = Uri.parse(url);
-  final res = await http.get(uri);
-  if (res.statusCode == 200) {
-    final body = res.body;
-    final items = jsonDecode(body);
-    searchMovie.value = items['results'];
-    searchMovie.notifyListeners();
-    isLoading.value = false;
-    isLoading.notifyListeners();
+  try {
+    isLoading.value = true;
+    searchMovie.value.clear();
+    final url =
+        "https://api.themoviedb.org/3/search/multi?query=$query&api_key=$apikey&include_adult=false&language=en-US";
+    final uri = Uri.parse(url);
+    final res = await http.get(uri);
+    if (res.statusCode == 200) {
+      final body = res.body;
+      final items = jsonDecode(body);
+      searchMovie.value = items['results'];
+      searchMovie.notifyListeners();
+      isLoading.value = false;
+      isLoading.notifyListeners();
+    }
+  } catch (error) {
+    stdout.write('Error :$error');
   }
 }
